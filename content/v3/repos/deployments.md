@@ -95,6 +95,15 @@ Users with pull access can view deployments for a repository:
 <%= headers 200, :pagination => default_pagination_rels %>
 <%= json(:deployment) { |h| [h] } %>
 
+## Get a single deployment
+
+    GET /repos/:owner/:repo/deployments/:id
+
+### Response
+
+<%= headers 200, :pagination => default_pagination_rels %>
+<%= json :deployment %>
+
 ## Create a Deployment
 
 If your repository is taking advantage of [commit statuses](/v3/repos/statuses),
